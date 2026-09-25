@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>آية ❤️ أنور</title>
+
+<style>
+
+/* ==============================
+   GENERAL
+============================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    font-family:
+        Arial,
+        "Tahoma",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #ff477e55,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #c9184a55,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #18000f,
+            #4d0625,
+            #210012
+        );
+
+    color:white;
+}
+
+
+/* ==============================
+   BACKGROUND
+============================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+
+.glow{
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:#ff477e22;
+    filter:blur(70px);
+    animation:glowMove 8s infinite alternate;
+}
+
+.glow:nth-child(1){
+    top:-100px;
+    left:-100px;
+}
+
+.glow:nth-child(2){
+    bottom:-120px;
+    right:-100px;
+    animation-delay:2s;
+}
+
+@keyframes glowMove{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.5);
+    }
+}
+
+
+.heart{
+    position:absolute;
+    bottom:-60px;
+
+    font-size:22px;
+
+    opacity:0;
+
+    animation:
+        heartFloat
+        linear
+        forwards;
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.7);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:
+            translateY(-115vh)
+            rotate(360deg)
+            scale(1.2);
+
+        opacity:0;
+    }
+}
+
+
+/* ==============================
+   CREATOR
+============================== */
+
+.creator{
+    position:fixed;
+
+    top:15px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:100;
+
+    font-size:11px;
+    letter-spacing:2px;
+
+    color:#ffd6e1;
+
+    opacity:.85;
+
+    white-space:nowrap;
+
+    text-shadow:
+        0 0 10px #ff477e,
+        0 0 20px #ff477e;
+}
+
+
+/* ==============================
+   HOME
+============================== */
+
+.home{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:80px 20px 30px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.homeCard{
+
+    width:100%;
+    max-width:700px;
+
+    padding:50px 25px;
+
+    text-align:center;
+
+    border-radius:35px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.45);
+
+    animation:
+        homeAppear
+        1.2s
+        ease;
+}
+
+@keyframes homeAppear{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(50px)
+            scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ==============================
+   MAIN HEART
+============================== */
+
+.mainHeart{
+
+    font-size:85px;
+
+    display:block;
+
+    margin-bottom:10px;
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            #ff477e
+        );
+
+    animation:
+        bigHeartbeat
+        1.5s
+        infinite;
+}
+
+@keyframes bigHeartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    15%{
+        transform:scale(1.2);
+    }
+
+    30%{
+        transform:scale(1);
+    }
+
+    45%{
+        transform:scale(1.15);
+    }
+}
+
+
+.smallTitle{
+
+    color:#ffc4d5;
+
+    font-size:14px;
+
+    margin-bottom:15px;
+}
+
+
+.homeTitle{
+
+    font-size:58px;
+
+    margin-bottom:15px;
+
+    color:white;
+
+    text-shadow:
+        0 0 10px #ff477e,
+        0 0 30px #ff477e,
+        0 0 60px #c9184a;
+}
+
+
+.homeText{
+
+    color:#ffe0e8;
+
+    line-height:1.9;
+
+    font-size:18px;
+
+    margin-bottom:35px;
+}
+
+
+/* ==============================
+   BUTTON
+============================== */
+
+.openButton{
+
+    border:none;
+
+    padding:17px 35px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff477e,
+            #c9184a
+        );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 35px
+        #c9184a66;
+
+    transition:.25s;
+
+    animation:
+        buttonGlow
+        2s
+        infinite;
+}
+
+.openButton:active{
+
+    transform:scale(.92);
+}
+
+@keyframes buttonGlow{
+
+    0%,100%{
+        box-shadow:
+            0 10px 30px
+            #c9184a55;
+    }
+
+    50%{
+        box-shadow:
+            0 10px 45px
+            #ff477eaa;
+    }
+}
+
+
+/* ==============================
+   ENVELOPE SCREEN
+============================== */
+
+.envelopeScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle,
+            #8d123d,
+            #21000f 70%
+        );
+
+    z-index:200;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    flex-direction:column;
+}
+
+.envelope{
+
+    width:310px;
+    height:210px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transform:scale(.7);
+
+    animation:
+        envelopeAppear
+        .8s
+        forwards;
+}
+
+@keyframes envelopeAppear{
+
+    to{
+        transform:scale(1);
+    }
+}
+
+
+.envBody{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ff477e,
+            #c9184a
+        );
+
+    border-radius:10px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.6);
+}
+
+
+.flap{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:0;
+    height:0;
+
+    border-left:
+        155px solid transparent;
+
+    border-right:
+        155px solid transparent;
+
+    border-top:
+        110px solid #ff7096;
+
+    transform-origin:top;
+
+    transition:
+        transform
+        1s;
+
+    z-index:5;
+}
+
+
+.envelope.open .flap{
+
+    transform:
+        rotateX(180deg);
+}
+
+
+.letter{
+
+    position:absolute;
+
+    width:260px;
+    height:180px;
+
+    left:25px;
+    top:15px;
+
+    background:white;
+
+    border-radius:7px;
+
+    transition:
+        1.2s;
+
+    z-index:2;
+}
+
+
+.envelope.open .letter{
+
+    transform:
+        translateY(-130px);
+}
+
+
+.envelopeText{
+
+    position:absolute;
+
+    bottom:-55px;
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:16px;
+
+    color:#ffdbe5;
+
+    z-index:10;
+}
+
+
+/* ==============================
+   MESSAGE
+============================== */
+
+.messagePage{
+
+    display:none;
+
+    min-height:100vh;
+
+    padding:
+        70px
+        16px
+        60px;
+
+    position:relative;
+
+    z-index:3;
+}
+
+
+.messageBox{
+
+    max-width:720px;
+
+    margin:auto;
+
+    background:
+        rgba(255,255,255,.96);
+
+    color:#4d1025;
+
+    border-radius:30px;
+
+    padding:
+        35px
+        24px;
+
+    box-shadow:
+        0 25px 90px
+        rgba(0,0,0,.5);
+
+    opacity:0;
+
+    transform:
+        translateY(60px);
+}
+
+
+.messageBox.show{
+
+    animation:
+        messageAppear
+        1s
+        forwards;
+}
+
+@keyframes messageAppear{
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+.messageTitle{
+
+    text-align:center;
+
+    color:#c9184a;
+
+    font-size:34px;
+
+    margin-bottom:28px;
+
+    text-shadow:
+        0 0 10px #ff477e55;
+}
+
+
+.message{
+
+    font-size:17px;
+
+    line-height:2.15;
+
+    white-space:pre-line;
+}
+
+
+.signature{
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:#c9184a;
+
+    font-size:21px;
+
+    font-weight:bold;
+}
+
+
+/* ==============================
+   SURPRISE
+============================== */
+
+.surprise{
+
+    max-width:720px;
+
+    margin:
+        80px
+        auto
+        20px;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+
+.surpriseLine{
+
+    height:1px;
+
+    width:85%;
+
+    margin:auto;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #ff477e,
+            transparent
+        );
+}
+
+
+.surpriseHint{
+
+    margin-top:35px;
+
+    color:#ffdce5;
+
+    font-size:18px;
+}
+
+
+.gift{
+
+    margin-top:25px;
+
+    width:110px;
+    height:110px;
+
+    border:none;
+
+    border-radius:28px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+        0 15px 45px
+        #ff477e44;
+
+    font-size:58px;
+
+    cursor:pointer;
+
+    animation:
+        giftPulse
+        1.5s
+        infinite;
+
+    transition:.3s;
+}
+
+
+.gift:active{
+
+    transform:
+        scale(.85);
+}
+
+
+@keyframes giftPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+
+.giftText{
+
+    margin-top:15px;
+
+    color:#ffc4d5;
+
+    font-size:14px;
+}
+
+
+.finalMessage{
+
+    display:none;
+
+    margin-top:40px;
+
+    padding:
+        40px
+        25px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #ffe1ea
+        );
+
+    color:#55152b;
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.5);
+
+    opacity:0;
+
+    transform:
+        scale(.5);
+}
+
+
+.finalMessage.show{
+
+    display:block;
+
+    animation:
+        finalAppear
+        1s
+        forwards;
+}
+
+
+@keyframes finalAppear{
+
+    0%{
+        opacity:0;
+
+        transform:
+            scale(.5)
+            translateY(60px);
+    }
+
+    70%{
+        transform:
+            scale(1.05)
+            translateY(0);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+.finalHearts{
+
+    font-size:30px;
+
+    margin-bottom:15px;
+}
+
+
+.finalMessage h2{
+
+    color:#c9184a;
+
+    font-size:35px;
+
+    margin-bottom:25px;
+}
+
+
+.finalMessage p{
+
+    font-size:17px;
+
+    line-height:2.1;
+}
+
+
+.finalHeart{
+
+    font-size:70px;
+
+    margin-top:25px;
+
+    animation:
+        bigHeartbeat
+        1.3s
+        infinite;
+}
+
+
+/* ==============================
+   BACK BUTTON
+============================== */
+
+.backButton{
+
+    display:block;
+
+    margin:
+        40px
+        auto
+        0;
+
+    border:none;
+
+    padding:
+        13px
+        28px;
+
+    border-radius:30px;
+
+    background:#c9184a;
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media(max-width:500px){
+
+    .creator{
+
+        font-size:9px;
+
+        letter-spacing:1.2px;
+
+        top:10px;
+    }
+
+    .homeTitle{
+
+        font-size:46px;
+    }
+
+    .mainHeart{
+
+        font-size:70px;
+    }
+
+    .homeText{
+
+        font-size:16px;
+    }
+
+    .homeCard{
+
+        padding:
+            40px
+            18px;
+    }
+
+    .message{
+
+        font-size:16px;
+
+        line-height:2;
+    }
+
+    .messageTitle{
+
+        font-size:29px;
+    }
+
+    .envelope{
+
+        width:280px;
+    }
+
+    .flap{
+
+        border-left-width:140px;
+        border-right-width:140px;
+    }
+
+    .letter{
+
+        left:20px;
+
+        width:240px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ==============================
+     BACKGROUND
+============================== -->
+
+<div class="background">
+
+    <div class="glow"></div>
+    <div class="glow"></div>
+
+</div>
+
+
+<!-- ==============================
+     CREATOR
+============================== -->
+
+<div class="creator">
+
+    CREATE BY CHLOKHI 3CHIR ANWAR ❤️
+
+</div>
+
+
+<!-- ==============================
+     HOME
+============================== -->
+
+<section
+    class="home"
+    id="home"
+>
+
+    <div class="homeCard">
+
+        <div class="smallTitle">
+
+            إلى الإنسانة اللي عندها
+            بلاصة خاصة فقلبي
+
+        </div>
+
+
+        <span class="mainHeart">
+
+            ❤️
+
+        </span>
+
+
+        <h1 class="homeTitle">
+
+            آية
+
+        </h1>
+
+
+        <p class="homeText">
+
+            بعض الناس كيدخلو لحياتنا صدفة...
+            <br>
+
+            ولكن كيبقاو فيها اختياراً ❤️
+
+            <br><br>
+
+            ونتي يا آية،
+            ماشي غير دخلتي لحياتي...
+            <br>
+
+            وليتي جزء جميل منها. 🫶🏻
+
+        </p>
+
+
+        <button
+            class="openButton"
+            onclick="openEnvelope()"
+        >
+
+            عندي ليك رسالة ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     ENVELOPE
+============================== -->
+
+<div
+    class="envelopeScreen"
+    id="envelopeScreen"
+>
+
+
+    <div
+        class="envelope"
+        id="envelope"
+        onclick="openLetter()"
+    >
+
+        <div class="envBody"></div>
+
+        <div class="letter"></div>
+
+        <div class="flap"></div>
+
+        <div class="envelopeText">
+
+            اضغطي على الظرف ❤️
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==============================
+     MESSAGE PAGE
+============================== -->
+
+<section
+    class="messagePage"
+    id="messagePage"
+>
+
+
+    <div
+        class="messageBox"
+        id="messageBox"
+    >
+
+
+        <div class="messageTitle">
+
+            آية ❤️
+
+        </div>
+
+
+        <div class="message">
+
+ماعرفتش منين نبدا، ولكن عارف حاجة وحدة: من نهار دخلتي لحياتي وأنا كنشوف بزاف ديال الحوايج بطريقة مختلفة. ماشي غير حيث راكي حبيبتي، ولكن حيث وليتي الإنسانة اللي كنرتاح ليها ونقدر نهضر معاها على أي حاجة.
+
+يمكن مرات كنكون ساكت، ولا ماكنعرفش نعبر مزيان على اللي فقلبي، ولكن هادشي ماكيعنيش أنني ماكنهتمش بيك، بالعكس… كنفكر فيك أكثر مما كتتصوري. ❤️
+
+كنحب ضحكتك، طريقتك فالهضرة، وحتى داك الزعل ديالك اللي مرات كيخليني مانعرفش شنو ندير 😂❤️. وبصراحة، ما بغيتش غير نكون معاك فالأوقات الزوينة، بغيت نكون حتى ملي تكوني مقلقة ولا محتاجة شي حد يسمع ليك.
+
+آية، يمكن ما نكونش كامل، ويمكن نغلط مرات، ولكن الحاجة اللي متأكد منها هي أن مشاعري تجاهك حقيقية. وبغيتك ديما تعرفي بلي أنور كيبغيك وكيقدرك من قلبو. ❤️🫶🏻
+
+        </div>
+
+
+        <div class="signature">
+
+            ديما ديالك، أنور ❤️
+
+        </div>
+
+
+        <!-- ==============================
+             SURPRISE
+        ============================== -->
+
+        <div class="surprise">
+
+            <div class="surpriseLine"></div>
+
+
+            <p class="surpriseHint">
+
+                وصلتي للنهاية؟ 👀❤️
+                <br>
+                ولكن مازال ما سالاتش الحكاية...
+
+            </p>
+
+
+            <button
+                class="gift"
+                id="gift"
+                onclick="openGift()"
+            >
+
+                🎁
+
+            </button>
+
+
+            <div class="giftText">
+
+                عندي ليك مفاجأة صغيرة ❤️
+
+            </div>
+
+
+            <div
+                class="finalMessage"
+                id="finalMessage"
+            >
+
+                <div class="finalHearts">
+
+                    ❤️ 💕 ❤️
+
+                </div>
+
+
+                <h2>
+
+                    آية ❤️
+
+                </h2>
+
+
+                <p>
+
+                    إلا وصلتي حتى لهنا،
+                    بغيتك تعرفي واحد الحاجة...
+
+                    <br><br>
+
+                    هاد الموقع كامل ما يقدرش يوصف
+                    شحال كتعني ليا.
+
+                    <br><br>
+
+                    يمكن الكلمات قليلة،
+                    ولكن الإحساس كبير بزاف. ❤️
+
+                    <br><br>
+
+                    وديما غتبقاي عندك واحد البلاصة
+                    خاصة فقلبي.
+
+                    🫶🏻
+
+                    <br><br>
+
+                    ماشي غير اليوم...
+                    <br>
+
+                    ماشي غير فالأوقات الزوينة...
+
+                    <br><br>
+
+                    بغيت نبقى ديما الشخص
+                    اللي تقدري تلقايه حدّاك. ❤️
+
+                    <br><br>
+
+                    <strong>
+
+                        أنور ❤️ آية
+
+                    </strong>
+
+                </p>
+
+
+                <div class="finalHeart">
+
+                    ❤️
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="backButton"
+            onclick="goHome()"
+        >
+
+            رجوع ❤️
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+
+/* ==============================
+   FLOATING HEARTS
+============================== */
+
+const background =
+    document.querySelector(".background");
+
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML =
+        Math.random() > .5
+        ? "❤️"
+        : "💕";
+
+
+    heart.style.left =
+        Math.random()*100 + "%";
+
+
+    heart.style.fontSize =
+        15 + Math.random()*28 + "px";
+
+
+    heart.style.animationDuration =
+        5 + Math.random()*7 + "s";
+
+
+    background.appendChild(heart);
+
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },13000);
+
+}
+
+
+setInterval(createHeart,450);
+
+
+/* ==============================
+   OPEN ENVELOPE
+============================== */
+
+function openEnvelope(){
+
+    const screen =
+        document.getElementById(
+            "envelopeScreen"
+        );
+
+    screen.style.display="flex";
+
+}
+
+
+/* ==============================
+   OPEN LETTER
+============================== */
+
+function openLetter(){
+
+    const envelope =
+        document.getElementById(
+            "envelope"
+        );
+
+
+    envelope.classList.add("open");
+
+
+    setTimeout(()=>{
+
+        document.getElementById(
+            "envelopeScreen"
+        ).style.display="none";
+
+
+        document.getElementById(
+            "home"
+        ).style.display="none";
+
+
+        const messagePage =
+            document.getElementById(
+                "messagePage"
+            );
+
+
+        messagePage.style.display="block";
+
+
+        const messageBox =
+            document.getElementById(
+                "messageBox"
+            );
+
+
+        messageBox.classList.add("show");
+
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+
+    },1300);
+
+}
+
+
+/* ==============================
+   GIFT
+============================== */
+
+function openGift(){
+
+    const gift =
+        document.getElementById(
+            "gift"
+        );
+
+
+    const finalMessage =
+        document.getElementById(
+            "finalMessage"
+        );
+
+
+    gift.innerHTML="💝";
+
+    gift.style.animation="none";
+
+
+    setTimeout(()=>{
+
+        finalMessage.classList.add(
+            "show"
+        );
+
+
+        finalMessage.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+
+        createSurpriseHearts();
+
+
+    },350);
+
+}
+
+
+/* ==============================
+   SURPRISE HEARTS
+============================== */
+
+function createSurpriseHearts(){
+
+    for(
+        let i=0;
+        i<35;
+        i++
+    ){
+
+        const heart =
+            document.createElement(
+                "div"
+            );
+
+
+        heart.innerHTML =
+            Math.random() > .5
+            ? "❤️"
+            : "💕";
+
+
+        heart.style.position="fixed";
+
+
+        heart.style.left =
+            10 + Math.random()*80 + "%";
+
+
+        heart.style.top="65%";
+
+
+        heart.style.fontSize =
+            15 + Math.random()*30 + "px";
+
+
+        heart.style.zIndex="999";
+
+
+        heart.style.pointerEvents=
+            "none";
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        heart.animate(
+
+            [
+
+                {
+                    transform:
+                        "translateY(0) scale(.5)",
+
+                    opacity:1
+                },
+
+                {
+                    transform:
+                        "translateY(-450px) scale(1.4)",
+
+                    opacity:0
+                }
+
+            ],
+
+            {
+
+                duration:
+                    1600 +
+                    Math.random()*1400,
+
+                easing:"ease-out"
+
+            }
+
+        );
+
+
+        setTimeout(()=>{
+
+            heart.remove();
+
+        },3200);
+
+    }
+
+}
+
+
+/* ==============================
+   HOME
+============================== */
+
+function goHome(){
+
+    document.getElementById(
+        "messagePage"
+    ).style.display="none";
+
+
+    document.getElementById(
+        "home"
+    ).style.display="flex";
+
+
+    document.getElementById(
+        "messageBox"
+    ).classList.
