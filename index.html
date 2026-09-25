@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
 <title>آية ❤️ أنور</title>
 
 <style>
-
-/* ==============================
-   GENERAL
-============================== */
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 html{
@@ -26,38 +20,19 @@ html{
 body{
     min-height:100vh;
     overflow-x:hidden;
-    font-family:
-        Arial,
-        "Tahoma",
-        sans-serif;
-
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            #ff477e55,
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 80%,
-            #c9184a55,
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #18000f,
-            #4d0625,
-            #210012
-        );
-
+    font-family:Arial,Tahoma,sans-serif;
     color:white;
+    background:
+        radial-gradient(circle at 15% 20%,#ff477e55,transparent 30%),
+        radial-gradient(circle at 85% 80%,#c9184a55,transparent 30%),
+        linear-gradient(145deg,#18000f,#570726,#210011);
 }
 
-
-/* ==============================
+/* =========================
    BACKGROUND
-============================== */
+========================= */
 
-.background{
+#hearts{
     position:fixed;
     inset:0;
     overflow:hidden;
@@ -65,390 +40,230 @@ body{
     z-index:0;
 }
 
-.glow{
+.floatHeart{
     position:absolute;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    background:#ff477e22;
-    filter:blur(70px);
-    animation:glowMove 8s infinite alternate;
+    bottom:-50px;
+    pointer-events:none;
+    animation:floatHeart linear forwards;
 }
 
-.glow:nth-child(1){
-    top:-100px;
-    left:-100px;
-}
-
-.glow:nth-child(2){
-    bottom:-120px;
-    right:-100px;
-    animation-delay:2s;
-}
-
-@keyframes glowMove{
-
-    from{
-        transform:scale(1);
-    }
-
-    to{
-        transform:scale(1.5);
-    }
-}
-
-
-.heart{
-    position:absolute;
-    bottom:-60px;
-
-    font-size:22px;
-
-    opacity:0;
-
-    animation:
-        heartFloat
-        linear
-        forwards;
-}
-
-@keyframes heartFloat{
-
+@keyframes floatHeart{
     0%{
-        transform:
-            translateY(0)
-            rotate(0deg)
-            scale(.7);
-
+        transform:translateY(0) rotate(0) scale(.6);
         opacity:0;
     }
-
     15%{
         opacity:.8;
     }
-
     100%{
-        transform:
-            translateY(-115vh)
-            rotate(360deg)
-            scale(1.2);
-
+        transform:translateY(-110vh) rotate(360deg) scale(1.2);
         opacity:0;
     }
 }
 
-
-/* ==============================
+/* =========================
    CREATOR
-============================== */
+========================= */
 
 .creator{
     position:fixed;
-
-    top:15px;
+    top:12px;
     left:50%;
-
     transform:translateX(-50%);
-
     z-index:100;
-
-    font-size:11px;
-    letter-spacing:2px;
-
-    color:#ffd6e1;
-
-    opacity:.85;
-
+    pointer-events:none;
     white-space:nowrap;
-
-    text-shadow:
-        0 0 10px #ff477e,
-        0 0 20px #ff477e;
+    font-size:10px;
+    letter-spacing:1.5px;
+    color:#ffe2ea;
+    text-shadow:0 0 12px #ff477e;
 }
 
-
-/* ==============================
+/* =========================
    HOME
-============================== */
+========================= */
 
-.home{
+#home{
     min-height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
-    padding:80px 20px 30px;
-
+    padding:65px 18px 30px;
     position:relative;
-
     z-index:2;
 }
 
 .homeCard{
-
     width:100%;
-    max-width:700px;
-
-    padding:50px 25px;
-
+    max-width:680px;
     text-align:center;
-
-    border-radius:35px;
-
-    background:
-        rgba(255,255,255,.08);
-
-    border:
-        1px solid
-        rgba(255,255,255,.2);
-
-    backdrop-filter:blur(20px);
-
-    box-shadow:
-        0 30px 100px
-        rgba(0,0,0,.45);
-
-    animation:
-        homeAppear
-        1.2s
-        ease;
+    padding:45px 20px;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(15px);
+    box-shadow:0 25px 70px rgba(0,0,0,.45);
+    animation:homeIn 1s ease;
 }
 
-@keyframes homeAppear{
-
+@keyframes homeIn{
     from{
         opacity:0;
-        transform:
-            translateY(50px)
-            scale(.9);
+        transform:translateY(50px) scale(.9);
     }
-
     to{
         opacity:1;
-        transform:
-            translateY(0)
-            scale(1);
+        transform:translateY(0) scale(1);
     }
 }
-
-
-/* ==============================
-   MAIN HEART
-============================== */
 
 .mainHeart{
-
-    font-size:85px;
-
     display:block;
-
-    margin-bottom:10px;
-
-    filter:
-        drop-shadow(
-            0 0 20px
-            #ff477e
-        );
-
-    animation:
-        bigHeartbeat
-        1.5s
-        infinite;
+    font-size:75px;
+    margin-bottom:5px;
+    animation:heartbeat 1.4s infinite;
+    filter:drop-shadow(0 0 20px #ff477e);
 }
 
-@keyframes bigHeartbeat{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    15%{
-        transform:scale(1.2);
-    }
-
-    30%{
-        transform:scale(1);
-    }
-
-    45%{
-        transform:scale(1.15);
-    }
+@keyframes heartbeat{
+    0%,100%{transform:scale(1);}
+    15%{transform:scale(1.2);}
+    30%{transform:scale(1);}
+    45%{transform:scale(1.15);}
 }
 
-
-.smallTitle{
-
-    color:#ffc4d5;
-
+.smallText{
+    color:#ffd0dc;
     font-size:14px;
-
-    margin-bottom:15px;
+    margin-bottom:12px;
 }
-
 
 .homeTitle{
-
-    font-size:58px;
-
+    font-size:52px;
     margin-bottom:15px;
-
-    color:white;
-
     text-shadow:
         0 0 10px #ff477e,
-        0 0 30px #ff477e,
-        0 0 60px #c9184a;
+        0 0 30px #ff477e;
 }
 
-
-.homeText{
-
-    color:#ffe0e8;
-
+.homeDescription{
+    color:#ffe4eb;
+    font-size:17px;
     line-height:1.9;
-
-    font-size:18px;
-
-    margin-bottom:35px;
+    margin-bottom:30px;
 }
 
+/* =========================
+   ALL BUTTONS
+========================= */
 
-/* ==============================
-   BUTTON
-============================== */
+button{
+    -webkit-tap-highlight-color:transparent;
+    touch-action:manipulation;
+    user-select:none;
+    cursor:pointer;
+}
 
 .openButton{
+    border:0;
+    outline:0;
+    position:relative;
+    z-index:20;
 
-    border:none;
-
-    padding:17px 35px;
-
+    padding:17px 32px;
     border-radius:50px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ff477e,
-            #c9184a
-        );
-
     color:white;
+    background:linear-gradient(135deg,#ff477e,#c9184a);
 
-    font-size:18px;
-
+    font-size:17px;
     font-weight:bold;
 
-    cursor:pointer;
+    box-shadow:0 10px 35px #c9184a66;
 
-    box-shadow:
-        0 10px 35px
-        #c9184a66;
-
-    transition:.25s;
-
-    animation:
-        buttonGlow
-        2s
-        infinite;
+    transition:transform .15s;
 }
 
 .openButton:active{
-
     transform:scale(.92);
 }
 
-@keyframes buttonGlow{
+/* =========================
+   ENVELOPE
+========================= */
 
-    0%,100%{
-        box-shadow:
-            0 10px 30px
-            #c9184a55;
-    }
-
-    50%{
-        box-shadow:
-            0 10px 45px
-            #ff477eaa;
-    }
-}
-
-
-/* ==============================
-   ENVELOPE SCREEN
-============================== */
-
-.envelopeScreen{
+#envelopeScreen{
+    display:none;
 
     position:fixed;
-
     inset:0;
 
+    z-index:500;
+
     background:
-        radial-gradient(
-            circle,
-            #8d123d,
-            #21000f 70%
-        );
-
-    z-index:200;
-
-    display:none;
+        radial-gradient(circle at center,#8d1746,#20000f 70%);
 
     justify-content:center;
     align-items:center;
-
     flex-direction:column;
+
+    touch-action:manipulation;
 }
 
 .envelope{
-
-    width:310px;
-    height:210px;
-
     position:relative;
+
+    width:290px;
+    height:195px;
 
     cursor:pointer;
 
-    transform:scale(.7);
+    touch-action:manipulation;
 
-    animation:
-        envelopeAppear
-        .8s
-        forwards;
+    animation:envelopeIn .7s ease forwards;
 }
 
-@keyframes envelopeAppear{
-
+@keyframes envelopeIn{
+    from{
+        opacity:0;
+        transform:scale(.7);
+    }
     to{
+        opacity:1;
         transform:scale(1);
     }
 }
 
-
 .envBody{
-
     position:absolute;
-
     inset:0;
 
-    background:
-        linear-gradient(
-            145deg,
-            #ff477e,
-            #c9184a
-        );
+    border-radius:9px;
 
-    border-radius:10px;
+    background:linear-gradient(145deg,#ff477e,#c9184a);
 
-    box-shadow:
-        0 25px 70px
-        rgba(0,0,0,.6);
+    box-shadow:0 25px 70px #0009;
 }
 
+.letter{
+    position:absolute;
+
+    width:245px;
+    height:165px;
+
+    left:22px;
+    top:15px;
+
+    background:#fff;
+
+    border-radius:6px;
+
+    transition:1s;
+
+    z-index:2;
+}
 
 .flap{
-
     position:absolute;
 
     top:0;
@@ -457,419 +272,241 @@ body{
     width:0;
     height:0;
 
-    border-left:
-        155px solid transparent;
-
-    border-right:
-        155px solid transparent;
-
-    border-top:
-        110px solid #ff7096;
+    border-left:145px solid transparent;
+    border-right:145px solid transparent;
+    border-top:100px solid #ff7096;
 
     transform-origin:top;
 
-    transition:
-        transform
-        1s;
+    transition:1s;
 
     z-index:5;
 }
 
-
 .envelope.open .flap{
-
-    transform:
-        rotateX(180deg);
+    transform:rotateX(180deg);
 }
-
-
-.letter{
-
-    position:absolute;
-
-    width:260px;
-    height:180px;
-
-    left:25px;
-    top:15px;
-
-    background:white;
-
-    border-radius:7px;
-
-    transition:
-        1.2s;
-
-    z-index:2;
-}
-
 
 .envelope.open .letter{
-
-    transform:
-        translateY(-130px);
+    transform:translateY(-120px);
 }
 
-
-.envelopeText{
-
-    position:absolute;
-
-    bottom:-55px;
-
-    width:100%;
-
-    text-align:center;
-
+.envelopeInstruction{
+    margin-top:50px;
+    color:#ffe0e8;
     font-size:16px;
-
-    color:#ffdbe5;
-
-    z-index:10;
+    text-align:center;
 }
 
-
-/* ==============================
+/* =========================
    MESSAGE
-============================== */
+========================= */
 
-.messagePage{
-
+#messagePage{
     display:none;
 
     min-height:100vh;
 
     padding:
-        70px
-        16px
-        60px;
+        65px
+        14px
+        50px;
 
     position:relative;
-
-    z-index:3;
+    z-index:10;
 }
 
-
 .messageBox{
-
+    width:100%;
     max-width:720px;
 
     margin:auto;
 
-    background:
-        rgba(255,255,255,.96);
+    padding:30px 21px;
 
+    background:#fff;
     color:#4d1025;
 
-    border-radius:30px;
+    border-radius:25px;
 
-    padding:
-        35px
-        24px;
+    box-shadow:0 25px 80px #0008;
 
-    box-shadow:
-        0 25px 90px
-        rgba(0,0,0,.5);
-
-    opacity:0;
-
-    transform:
-        translateY(60px);
+    animation:messageIn .8s ease;
 }
 
-
-.messageBox.show{
-
-    animation:
-        messageAppear
-        1s
-        forwards;
-}
-
-@keyframes messageAppear{
-
+@keyframes messageIn{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
     to{
         opacity:1;
-
-        transform:
-            translateY(0);
+        transform:translateY(0);
     }
 }
 
-
 .messageTitle{
-
     text-align:center;
-
     color:#c9184a;
-
-    font-size:34px;
-
-    margin-bottom:28px;
-
-    text-shadow:
-        0 0 10px #ff477e55;
+    font-size:32px;
+    margin-bottom:25px;
 }
-
 
 .message{
-
-    font-size:17px;
-
-    line-height:2.15;
-
     white-space:pre-line;
+    font-size:16px;
+    line-height:2.05;
 }
-
 
 .signature{
-
-    margin-top:30px;
-
     text-align:center;
-
     color:#c9184a;
-
-    font-size:21px;
-
+    font-size:20px;
     font-weight:bold;
+    margin-top:25px;
 }
 
-
-/* ==============================
+/* =========================
    SURPRISE
-============================== */
+========================= */
 
 .surprise{
-
-    max-width:720px;
-
-    margin:
-        80px
-        auto
-        20px;
-
+    margin-top:70px;
     text-align:center;
-
-    padding:20px;
 }
 
-
-.surpriseLine{
-
+.line{
     height:1px;
-
     width:85%;
-
     margin:auto;
-
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            #ff477e,
-            transparent
-        );
+    background:linear-gradient(
+        to right,
+        transparent,
+        #ff477e,
+        transparent
+    );
 }
 
-
-.surpriseHint{
-
-    margin-top:35px;
-
-    color:#ffdce5;
-
-    font-size:18px;
+.surpriseTitle{
+    margin-top:30px;
+    color:#c9184a;
+    font-size:19px;
 }
 
+.surpriseText{
+    margin-top:8px;
+    color:#7a3049;
+    font-size:14px;
+}
 
-.gift{
+.giftButton{
+    position:relative;
+    z-index:30;
 
-    margin-top:25px;
+    display:block;
 
-    width:110px;
-    height:110px;
+    width:105px;
+    height:105px;
 
-    border:none;
+    margin:25px auto 0;
 
-    border-radius:28px;
+    border:0;
+    border-radius:25px;
 
-    background:
-        rgba(255,255,255,.12);
+    background:#fff0f4;
 
-    backdrop-filter:blur(10px);
+    font-size:55px;
 
     box-shadow:
-        0 15px 45px
-        #ff477e44;
+        0 12px 40px #c9184a44;
 
-    font-size:58px;
+    animation:giftPulse 1.5s infinite;
 
-    cursor:pointer;
-
-    animation:
-        giftPulse
-        1.5s
-        infinite;
-
-    transition:.3s;
+    transition:transform .15s;
 }
 
-
-.gift:active{
-
-    transform:
-        scale(.85);
+.giftButton:active{
+    transform:scale(.88);
 }
-
 
 @keyframes giftPulse{
-
     0%,100%{
         transform:scale(1);
     }
-
     50%{
         transform:scale(1.08);
     }
 }
 
-
-.giftText{
-
-    margin-top:15px;
-
-    color:#ffc4d5;
-
-    font-size:14px;
-}
-
-
 .finalMessage{
-
     display:none;
 
-    margin-top:40px;
+    margin-top:35px;
 
-    padding:
-        40px
-        25px;
+    padding:35px 20px;
 
-    border-radius:30px;
+    border-radius:25px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fff,
-            #ffe1ea
-        );
+    background:linear-gradient(145deg,#fff,#ffe0e9);
 
     color:#55152b;
 
-    box-shadow:
-        0 25px 80px
-        rgba(0,0,0,.5);
+    box-shadow:0 20px 60px #0005;
 
-    opacity:0;
-
-    transform:
-        scale(.5);
+    text-align:center;
 }
-
 
 .finalMessage.show{
-
     display:block;
-
-    animation:
-        finalAppear
-        1s
-        forwards;
+    animation:finalIn 1s ease;
 }
 
-
-@keyframes finalAppear{
-
+@keyframes finalIn{
     0%{
         opacity:0;
-
-        transform:
-            scale(.5)
-            translateY(60px);
+        transform:scale(.5) translateY(50px);
     }
-
     70%{
-        transform:
-            scale(1.05)
-            translateY(0);
+        transform:scale(1.05);
     }
-
     100%{
         opacity:1;
-
-        transform:
-            scale(1);
+        transform:scale(1);
     }
 }
 
-
-.finalHearts{
-
-    font-size:30px;
-
-    margin-bottom:15px;
-}
-
-
 .finalMessage h2{
-
     color:#c9184a;
-
-    font-size:35px;
-
-    margin-bottom:25px;
+    font-size:32px;
+    margin-bottom:20px;
 }
-
 
 .finalMessage p{
-
-    font-size:17px;
-
+    font-size:16px;
     line-height:2.1;
 }
 
-
 .finalHeart{
-
-    font-size:70px;
-
-    margin-top:25px;
-
-    animation:
-        bigHeartbeat
-        1.3s
-        infinite;
+    font-size:65px;
+    margin-top:20px;
+    animation:heartbeat 1.3s infinite;
 }
 
-
-/* ==============================
-   BACK BUTTON
-============================== */
+/* =========================
+   BACK
+========================= */
 
 .backButton{
-
     display:block;
 
-    margin:
-        40px
-        auto
-        0;
+    position:relative;
+    z-index:30;
 
-    border:none;
+    margin:35px auto 0;
 
-    padding:
-        13px
-        28px;
+    border:0;
+
+    padding:13px 28px;
 
     border-radius:30px;
 
@@ -878,168 +515,103 @@ body{
     color:white;
 
     font-size:15px;
-
-    cursor:pointer;
 }
 
+.backButton:active{
+    transform:scale(.92);
+}
 
-/* ==============================
+/* =========================
    MOBILE
-============================== */
+========================= */
 
 @media(max-width:500px){
 
-    .creator{
-
-        font-size:9px;
-
-        letter-spacing:1.2px;
-
-        top:10px;
-    }
-
     .homeTitle{
-
-        font-size:46px;
+        font-size:45px;
     }
 
     .mainHeart{
-
-        font-size:70px;
+        font-size:68px;
     }
 
-    .homeText{
-
+    .homeDescription{
         font-size:16px;
     }
 
     .homeCard{
-
-        padding:
-            40px
-            18px;
+        padding:38px 17px;
     }
 
     .message{
-
-        font-size:16px;
-
-        line-height:2;
+        font-size:15.5px;
     }
 
     .messageTitle{
-
         font-size:29px;
     }
 
     .envelope{
-
         width:280px;
     }
 
     .flap{
-
         border-left-width:140px;
         border-right-width:140px;
     }
 
     .letter{
-
-        left:20px;
-
-        width:240px;
+        left:18px;
+        width:244px;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- ==============================
-     BACKGROUND
-============================== -->
-
-<div class="background">
-
-    <div class="glow"></div>
-    <div class="glow"></div>
-
-</div>
-
-
-<!-- ==============================
-     CREATOR
-============================== -->
-
+<!-- CREATOR -->
 <div class="creator">
-
     CREATE BY CHLOKHI 3CHIR ANWAR ❤️
-
 </div>
 
+<!-- FLOATING HEARTS -->
+<div id="hearts"></div>
 
-<!-- ==============================
+<!-- =========================
      HOME
-============================== -->
+========================= -->
 
-<section
-    class="home"
-    id="home"
->
+<section id="home">
 
     <div class="homeCard">
 
-        <div class="smallTitle">
-
-            إلى الإنسانة اللي عندها
-            بلاصة خاصة فقلبي
-
+        <div class="smallText">
+            إلى الإنسانة اللي عندها بلاصة خاصة فقلبي ❤️
         </div>
 
-
         <span class="mainHeart">
-
             ❤️
-
         </span>
 
-
         <h1 class="homeTitle">
-
             آية
-
         </h1>
 
-
-        <p class="homeText">
-
+        <p class="homeDescription">
             بعض الناس كيدخلو لحياتنا صدفة...
             <br>
-
-            ولكن كيبقاو فيها اختياراً ❤️
-
+            ولكن كيبقاو فيها اختياراً.
             <br><br>
-
             ونتي يا آية،
-            ماشي غير دخلتي لحياتي...
-            <br>
-
-            وليتي جزء جميل منها. 🫶🏻
-
+            وليتي واحد من أجمل الحوايج فحياتي. 🫶🏻
         </p>
-
 
         <button
             class="openButton"
-            onclick="openEnvelope()"
+            id="openButton"
         >
-
             عندي ليك رسالة ❤️
-
         </button>
 
     </div>
@@ -1047,20 +619,15 @@ body{
 </section>
 
 
-<!-- ==============================
+<!-- =========================
      ENVELOPE
-============================== -->
+========================= -->
 
-<div
-    class="envelopeScreen"
-    id="envelopeScreen"
->
-
+<div id="envelopeScreen">
 
     <div
         class="envelope"
         id="envelope"
-        onclick="openLetter()"
     >
 
         <div class="envBody"></div>
@@ -1069,39 +636,26 @@ body{
 
         <div class="flap"></div>
 
-        <div class="envelopeText">
+    </div>
 
-            اضغطي على الظرف ❤️
-
-        </div>
-
+    <div class="envelopeInstruction">
+        اضغطي على الظرف ❤️
     </div>
 
 </div>
 
 
-<!-- ==============================
-     MESSAGE PAGE
-============================== -->
+<!-- =========================
+     MESSAGE
+========================= -->
 
-<section
-    class="messagePage"
-    id="messagePage"
->
+<section id="messagePage">
 
-
-    <div
-        class="messageBox"
-        id="messageBox"
-    >
-
+    <div class="messageBox">
 
         <div class="messageTitle">
-
             آية ❤️
-
         </div>
-
 
         <div class="message">
 
@@ -1115,68 +669,44 @@ body{
 
         </div>
 
-
         <div class="signature">
-
             ديما ديالك، أنور ❤️
-
         </div>
 
 
-        <!-- ==============================
-             SURPRISE
-        ============================== -->
+        <!-- SURPRISE -->
 
         <div class="surprise">
 
-            <div class="surpriseLine"></div>
+            <div class="line"></div>
 
-
-            <p class="surpriseHint">
-
+            <div class="surpriseTitle">
                 وصلتي للنهاية؟ 👀❤️
-                <br>
-                ولكن مازال ما سالاتش الحكاية...
-
-            </p>
-
-
-            <button
-                class="gift"
-                id="gift"
-                onclick="openGift()"
-            >
-
-                🎁
-
-            </button>
-
-
-            <div class="giftText">
-
-                عندي ليك مفاجأة صغيرة ❤️
-
             </div>
 
+            <div class="surpriseText">
+                ولكن... مازال كاينة حاجة مخبية ليك 🎁
+            </div>
+
+            <button
+                class="giftButton"
+                id="giftButton"
+            >
+                🎁
+            </button>
 
             <div
                 class="finalMessage"
                 id="finalMessage"
             >
 
-                <div class="finalHearts">
-
+                <div style="font-size:28px;">
                     ❤️ 💕 ❤️
-
                 </div>
 
-
                 <h2>
-
                     آية ❤️
-
                 </h2>
-
 
                 <p>
 
@@ -1186,49 +716,34 @@ body{
                     <br><br>
 
                     هاد الموقع كامل ما يقدرش يوصف
-                    شحال كتعني ليا.
+                    شحال كتعني ليا. ❤️
 
                     <br><br>
 
                     يمكن الكلمات قليلة،
-                    ولكن الإحساس كبير بزاف. ❤️
+                    ولكن الإحساس كبير بزاف.
 
                     <br><br>
 
-                    وديما غتبقاي عندك واحد البلاصة
-                    خاصة فقلبي.
-
-                    🫶🏻
-
-                    <br><br>
-
-                    ماشي غير اليوم...
-                    <br>
-
-                    ماشي غير فالأوقات الزوينة...
+                    وديما غتبقاي عندك
+                    واحد البلاصة خاصة فقلبي. 🫶🏻
 
                     <br><br>
 
                     بغيت نبقى ديما الشخص
-                    اللي تقدري تلقايه حدّاك. ❤️
+                    اللي تقدري تلقايه حدّاك.
 
                     <br><br>
 
                     <strong>
-
                         أنور ❤️ آية
-
                     </strong>
 
                 </p>
 
-
                 <div class="finalHeart">
-
                     ❤️
-
                 </div>
-
 
             </div>
 
@@ -1237,297 +752,267 @@ body{
 
         <button
             class="backButton"
-            onclick="goHome()"
+            id="backButton"
         >
-
             رجوع ❤️
-
         </button>
-
 
     </div>
 
 </section>
 
 
-
 <script>
 
+/* =========================
+   HEARTS
+========================= */
 
-/* ==============================
-   FLOATING HEARTS
-============================== */
+const hearts =
+    document.getElementById("hearts");
 
-const background =
-    document.querySelector(".background");
+function makeHeart(){
 
-
-function createHeart(){
-
-    const heart =
+    const h =
         document.createElement("div");
 
-    heart.className="heart";
+    h.className="floatHeart";
 
-    heart.innerHTML =
+    h.textContent =
         Math.random() > .5
         ? "❤️"
         : "💕";
 
-
-    heart.style.left =
+    h.style.left =
         Math.random()*100 + "%";
 
+    h.style.fontSize =
+        (15 + Math.random()*25) + "px";
 
-    heart.style.fontSize =
-        15 + Math.random()*28 + "px";
+    h.style.animationDuration =
+        (5 + Math.random()*6) + "s";
 
+    hearts.appendChild(h);
 
-    heart.style.animationDuration =
-        5 + Math.random()*7 + "s";
-
-
-    background.appendChild(heart);
-
-
-    setTimeout(()=>{
-
-        heart.remove();
-
-    },13000);
-
+    setTimeout(
+        ()=>h.remove(),
+        12000
+    );
 }
 
+setInterval(makeHeart,450);
 
-setInterval(createHeart,450);
 
+/* =========================
+   OPEN ENVELOPE SCREEN
+========================= */
 
-/* ==============================
-   OPEN ENVELOPE
-============================== */
+const openButton =
+    document.getElementById("openButton");
 
-function openEnvelope(){
+openButton.addEventListener(
+    "pointerdown",
+    function(e){
 
-    const screen =
+        e.preventDefault();
+
         document.getElementById(
             "envelopeScreen"
-        );
+        ).style.display="flex";
 
-    screen.style.display="flex";
+    },
+    {passive:false}
+);
 
-}
 
-
-/* ==============================
+/* =========================
    OPEN LETTER
-============================== */
+========================= */
 
-function openLetter(){
+const envelope =
+    document.getElementById("envelope");
 
-    const envelope =
-        document.getElementById(
-            "envelope"
-        );
+let letterOpened=false;
 
+envelope.addEventListener(
+    "pointerdown",
+    function(e){
 
-    envelope.classList.add("open");
+        e.preventDefault();
 
+        if(letterOpened) return;
 
-    setTimeout(()=>{
+        letterOpened=true;
 
-        document.getElementById(
-            "envelopeScreen"
-        ).style.display="none";
+        envelope.classList.add("open");
 
+        setTimeout(function(){
 
-        document.getElementById(
-            "home"
-        ).style.display="none";
+            document.getElementById(
+                "envelopeScreen"
+            ).style.display="none";
 
+            document.getElementById(
+                "home"
+            ).style.display="none";
 
-        const messagePage =
             document.getElementById(
                 "messagePage"
-            );
+            ).style.display="block";
+
+            window.scrollTo(0,0);
+
+        },1200);
+
+    },
+    {passive:false}
+);
 
 
-        messagePage.style.display="block";
-
-
-        const messageBox =
-            document.getElementById(
-                "messageBox"
-            );
-
-
-        messageBox.classList.add("show");
-
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
-
-    },1300);
-
-}
-
-
-/* ==============================
+/* =========================
    GIFT
-============================== */
+========================= */
 
-function openGift(){
+const giftButton =
+    document.getElementById("giftButton");
 
-    const gift =
-        document.getElementById(
-            "gift"
-        );
+const finalMessage =
+    document.getElementById("finalMessage");
+
+let giftOpened=false;
+
+giftButton.addEventListener(
+    "pointerdown",
+    function(e){
+
+        e.preventDefault();
+
+        if(giftOpened) return;
+
+        giftOpened=true;
+
+        giftButton.textContent="💝";
+
+        giftButton.style.animation="none";
+
+        setTimeout(function(){
+
+            finalMessage.classList.add("show");
+
+            finalMessage.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+            surpriseHearts();
+
+        },300);
+
+    },
+    {passive:false}
+);
 
 
-    const finalMessage =
-        document.getElementById(
-            "finalMessage"
-        );
-
-
-    gift.innerHTML="💝";
-
-    gift.style.animation="none";
-
-
-    setTimeout(()=>{
-
-        finalMessage.classList.add(
-            "show"
-        );
-
-
-        finalMessage.scrollIntoView({
-            behavior:"smooth",
-            block:"center"
-        });
-
-
-        createSurpriseHearts();
-
-
-    },350);
-
-}
-
-
-/* ==============================
+/* =========================
    SURPRISE HEARTS
-============================== */
+========================= */
 
-function createSurpriseHearts(){
+function surpriseHearts(){
 
-    for(
-        let i=0;
-        i<35;
-        i++
-    ){
+    for(let i=0;i<35;i++){
 
-        const heart =
-            document.createElement(
-                "div"
-            );
+        const h =
+            document.createElement("div");
 
-
-        heart.innerHTML =
+        h.textContent =
             Math.random() > .5
             ? "❤️"
             : "💕";
 
+        h.style.position="fixed";
 
-        heart.style.position="fixed";
+        h.style.left =
+            (10 + Math.random()*80) + "%";
 
+        h.style.top="65%";
 
-        heart.style.left =
-            10 + Math.random()*80 + "%";
+        h.style.zIndex="1000";
 
+        h.style.pointerEvents="none";
 
-        heart.style.top="65%";
+        h.style.fontSize =
+            (15 + Math.random()*30) + "px";
 
+        document.body.appendChild(h);
 
-        heart.style.fontSize =
-            15 + Math.random()*30 + "px";
-
-
-        heart.style.zIndex="999";
-
-
-        heart.style.pointerEvents=
-            "none";
-
-
-        document.body.appendChild(
-            heart
-        );
-
-
-        heart.animate(
-
-            [
-
+        const animation =
+            h.animate(
+                [
+                    {
+                        transform:
+                            "translateY(0) scale(.5)",
+                        opacity:1
+                    },
+                    {
+                        transform:
+                            "translateY(-400px) scale(1.3)",
+                        opacity:0
+                    }
+                ],
                 {
-                    transform:
-                        "translateY(0) scale(.5)",
-
-                    opacity:1
-                },
-
-                {
-                    transform:
-                        "translateY(-450px) scale(1.4)",
-
-                    opacity:0
+                    duration:
+                        1600 +
+                        Math.random()*1200,
+                    easing:"ease-out"
                 }
+            );
 
-            ],
-
-            {
-
-                duration:
-                    1600 +
-                    Math.random()*1400,
-
-                easing:"ease-out"
-
-            }
-
-        );
-
-
-        setTimeout(()=>{
-
-            heart.remove();
-
-        },3200);
+        animation.onfinish=()=>{
+            h.remove();
+        };
 
     }
-
 }
 
 
-/* ==============================
-   HOME
-============================== */
+/* =========================
+   BACK HOME
+========================= */
 
-function goHome(){
+const backButton =
+    document.getElementById("backButton");
 
-    document.getElementById(
-        "messagePage"
-    ).style.display="none";
+backButton.addEventListener(
+    "pointerdown",
+    function(e){
 
+        e.preventDefault();
 
-    document.getElementById(
-        "home"
-    ).style.display="flex";
+        document.getElementById(
+            "messagePage"
+        ).style.display="none";
 
+        document.getElementById(
+            "home"
+        ).style.display="flex";
 
-    document.getElementById(
-        "messageBox"
-    ).classList.
+        finalMessage.classList.remove("show");
+
+        giftButton.textContent="🎁";
+
+        giftOpened=false;
+
+        letterOpened=false;
+
+        envelope.classList.remove("open");
+
+        window.scrollTo(0,0);
+
+    },
+    {passive:false}
+);
+
+</script>
+
+</body>
+   </html>
